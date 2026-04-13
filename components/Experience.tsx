@@ -15,6 +15,24 @@ interface TimelineItem {
 
 const TIMELINE: TimelineItem[] = [
   {
+    type:    "work",
+    title:   "Student Researcher",
+    org:     "Noridian Healthcare",
+    period:  "Jan 2025 — May 2025",
+    description:
+      "Built an AI-powered knowledge assistant using Microsoft Copilot and Azure to organize and centralize Noridian Healthcare's SharePoint file system. Facilitated more convenient access to essential files for company employees. Produced a guide specifying the requirements, limitations, and risks of the system to outline how to implement it.",
+    tags: ["Microsoft Copilot", "Azure", "SharePoint"],
+  },
+  {
+    type:    "work",
+    title:   "IT Helpdesk Specialist",
+    org:     "NDSU",
+    period:  "Aug 2024 — May 2025",
+    description:
+      "Provided technical support to students, faculty, and staff by diagnosing and resolving hardware, software, and network issues via in-person, phone, and remote sessions. Managed user accounts and access permissions through university systems, ensuring data security and compliance with IT policies. Documented support requests and resolutions in the ticketing system to track trends and improve response efficiency.",
+    tags: ["Technical Support", "Networking", "IT Operations"],
+  },
+  {
     type:    "education",
     title:   "Bachelor of Science — Computer Science",
     org:     "North Dakota State University",
@@ -23,15 +41,15 @@ const TIMELINE: TimelineItem[] = [
       "Core coursework: Data Structures, Algorithms, Operating Systems, Computer Networks, Databases, and Software Engineering. Graduated 2025.",
     tags: ["B.S. Computer Science", "2025"],
   },
-  /* ── Add work / internship entries below this line ── */
-  // {
-  //   type:    "work",
-  //   title:   "Software Engineering Intern",
-  //   org:     "Company Name",
-  //   period:  "Summer 20XX",
-  //   description: "...",
-  //   tags: ["React", "Node.js"],
-  // },
+  {
+    type:    "work",
+    title:   "Software Engineering Intern",
+    org:     "TJA League",
+    period:  "May 2023 — Jul 2023",
+    description:
+      "Developed a front-end application with Angular to record player and team stats and post league news. Designed and executed SQL queries to efficiently retrieve and populate player and team data. Identified bottlenecks and inefficiencies, then applied targeted optimizations to streamline code and enhance webpage loading speed.",
+    tags: ["Angular", "SQL", "Front-End"],
+  },
 ];
 
 const ICON_MAP = { education: GraduationCap, work: Briefcase };

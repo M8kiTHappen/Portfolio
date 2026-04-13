@@ -1,0 +1,64 @@
+========================================
+  PORTFOLIO CONTENT — Fill this out
+  then tell Claude to update the site
+========================================
+
+
+── WORK EXPERIENCE ──────────────────────
+(For each role, fill in: Company, Job Title, Dates, and a short description)
+
+JOB 1
+  Company: TJA League
+  Title: SWE Intern
+  Dates: May 2023 - July 2023      (e.g. Jun 2024 — Aug 2024)
+  Description: Developed a Front-end application with Angular to record player/team stats and post league news
+● Designed and executed SQL queries to efficiently retrieve and populate player and team data
+● Identified bottlenecks and inefficiencies, then applied targeted optimizations to streamline code and enhance webpage loading speed
+
+JOB 2
+  Company: Noridian Healthcare
+  Title: Student Researcher
+  Dates: Jan 2025 - May 2025
+  Description: Built an AI-powered knowledge assistant using Microsoft Copilot and Azure to organize and centralize Noridian Healthcare’s SharePoint file system
+● Facilitated more convenient access to essential files for company employees
+● Produced a guide specifying the requirements, limitations, and risks of the system to outline how to
+implement it
+
+
+JOB 3
+  Company: NDSU
+  Title: IT Helpdesk Specialist
+  Dates: August 2024 - May 2025
+  Description: Provided technical support to students, faculty, and staff by diagnosing and resolving hardware, software, and network issues via in-person, phone, and remote sessions.
+Managed user accounts and access permissions through university systems, ensuring data security and compliance with IT policies.
+Documented support requests and resolutions in the ticketing system to track trends, improve response efficiency, and assist with long-term infrastructure improvements.
+
+
+(Add more jobs by copying the block above)
+
+
+── PROJECTS ─────────────────────────────
+(For each project, fill in: Name, Description, Tech used, GitHub link, Live demo link if any)
+
+PROJECT 1
+  Name:
+  Description:
+  Tech:        (e.g. React, Node.js, PostgreSQL)
+  GitHub:
+  Live Demo:   (leave blank if none)
+
+PROJECT 2
+  Name:
+  Description:
+  Tech:
+  GitHub:
+  Live Demo:
+
+PROJECT 3
+  Name:
+  Description:
+  Tech:
+  GitHub:
+  Live Demo:
+
+(Add more projects by copying the block above)

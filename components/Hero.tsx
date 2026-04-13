@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown, User } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 
 const ROLES = [
@@ -122,7 +123,7 @@ export default function Hero() {
 
       {/* ── Main content ── */}
       <div className="relative z-10 max-w-4xl w-full mx-auto text-center">
-        {/* Avatar placeholder */}
+        {/* Avatar */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -131,16 +132,18 @@ export default function Hero() {
         >
           {/* Outer spinning dashed ring */}
           <div className="absolute inset-0 rounded-full border-2 border-dashed border-[rgba(0,255,135,0.28)] animate-spin [animation-duration:12s]" />
-          {/* Inner circle */}
-          <div className="absolute inset-2 rounded-full bg-[#0E1616] border border-[rgba(0,255,135,0.12)] flex items-center justify-center">
-            <User size={40} className="text-[#2A4040]" />
+          {/* Photo */}
+          <div className="absolute inset-2 rounded-full overflow-hidden border border-[rgba(0,255,135,0.18)]">
+            <Image
+              src="/avatar.jpg"
+              alt="Mohamed Aden"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
           {/* Ambient glow */}
           <div className="absolute inset-0 rounded-full bg-[rgba(0,255,135,0.04)] blur-xl pointer-events-none" />
-          {/* Replace-me label */}
-          <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 section-label text-[0.6rem] text-[#3D5555] whitespace-nowrap">
-            your photo
-          </span>
         </motion.div>
 
         {/* Status chip */}
