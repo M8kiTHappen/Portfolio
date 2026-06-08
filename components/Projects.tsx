@@ -17,34 +17,24 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
-    title: "Project Alpha",
+    title: "GeoConnections",
     description:
-      "A full-stack web application with real-time collaboration, JWT authentication, and a responsive UI. Designed for scale — containerised with Docker and deployed on AWS with zero-downtime deployments.",
-    tech:     ["Next.js", "TypeScript", "PostgreSQL", "Redis", "Docker", "AWS"],
-    github:   "#",
-    live:     "#",
+      "A daily geography puzzle game where players group 16 tiles into 4 hidden categories. Uses the Anthropic Claude API to automatically generate new puzzle categories daily, stored in Firebase Firestore so the AI runs once per day regardless of user count. API calls are secured through a Vercel serverless function, keeping credentials server-side.",
+    tech:     ["React", "Tailwind CSS", "Firebase", "Claude API", "Vercel"],
+    github:   "https://github.com/M8kiTHappen/GeoConnections",
+    live:     "https://geo-connections.vercel.app/",
     featured: true,
     accent:   "#00FF87",
   },
   {
-    title: "Project Beta",
+    title: "GuessTheSong",
     description:
-      "High-performance REST API serving thousands of requests per minute. Implements request queuing, rate limiting, automatic retries, and structured logging with Prometheus metrics.",
-    tech:     ["Python", "FastAPI", "MongoDB", "AWS", "Prometheus"],
-    github:   "#",
-    live:     null,
+      "A multiplayer music guessing game with real song previews and album art via the iTunes API. Uses Supabase (PostgreSQL) as the song database filtered by genre and decade, Next.js serverless API routes to serve randomized song pools, and Framer Motion for smooth animations across a fully responsive UI.",
+    tech:     ["Next.js", "TypeScript", "Supabase", "iTunes API", "Framer Motion", "Tailwind CSS"],
+    github:   "https://github.com/M8kiTHappen/guess-the-song",
+    live:     "https://guess-the-song-topaz-nine.vercel.app/",
     featured: false,
     accent:   "#0099FF",
-  },
-  {
-    title: "Project Gamma",
-    description:
-      "An open-source CLI tool that automates complex CI/CD workflows, reducing pipeline setup time significantly. Includes a plugin system and first-class Windows / Linux / macOS support.",
-    tech:     ["Node.js", "TypeScript", "Bash", "GitHub Actions"],
-    github:   "#",
-    live:     null,
-    featured: false,
-    accent:   "#00FF87",
   },
 ];
 
@@ -168,7 +158,7 @@ export default function Projects() {
           className="mt-12 text-center"
         >
           <a
-            href="https://github.com"
+            href="https://github.com/M8kiTHappen"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline inline-flex items-center gap-2"

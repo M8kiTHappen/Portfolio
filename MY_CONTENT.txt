@@ -41,18 +41,18 @@ Documented support requests and resolutions in the ticketing system to track tre
 (For each project, fill in: Name, Description, Tech used, GitHub link, Live demo link if any)
 
 PROJECT 1
-  Name:
-  Description:
-  Tech:        (e.g. React, Node.js, PostgreSQL)
-  GitHub:
-  Live Demo:   (leave blank if none)
+  Name: GEOCONNECTIONS
+  Description: A daily geography puzzle game where players group 16 tiles into 4 hidden categories. Built with React and Tailwind CSS, deployed on Vercel. Uses the Anthropic Claude API to automatically generate new puzzle categories daily, stored in Firebase Firestore so the AI runs once per day regardless of user count. API calls are secured through a Vercel serverless function, keeping credentials server-side.
+  Tech: List from desc.
+  GitHub: https://github.com/M8kiTHappen/GeoConnections
+  Live Demo: https://geo-connections.vercel.app/
 
 PROJECT 2
-  Name:
-  Description:
-  Tech:
-  GitHub:
-  Live Demo:
+  Name: GuessTheSong
+  Description: Guess the Song — A multiplayer music guessing game built with Next.js 16, TypeScript, and deployed on Vercel. Uses the iTunes API for real song previews and album art, Supabase (PostgreSQL) as the song database filtered by genre and decade, Next.js serverless API routes to serve randomized song pools, Framer Motion for animations, and Tailwind CSS for a fully responsive UI.
+  Tech: Get it from above desc.
+  GitHub: https://github.com/M8kiTHappen/guess-the-song
+  Live Demo: https://guess-the-song-topaz-nine.vercel.app/
 
 PROJECT 3
   Name:

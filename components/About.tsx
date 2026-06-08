@@ -2,7 +2,8 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { GraduationCap, Code2, MapPin, Zap, User } from "lucide-react";
+import { GraduationCap, Code2, MapPin, Zap } from "lucide-react";
+import Image from "next/image";
 
 const HIGHLIGHTS = [
   {
@@ -68,19 +69,18 @@ export default function About() {
           >
             <div className="relative w-full max-w-[280px]">
               {/* Portrait frame */}
-              <div className="aspect-[3/4] rounded-lg bg-[#0E1616] border border-[rgba(0,255,135,0.10)] flex flex-col items-center justify-center gap-3 overflow-hidden relative">
+              <div className="aspect-[3/4] rounded-lg overflow-hidden relative border border-[rgba(0,255,135,0.10)]">
+                <Image
+                  src="/about.jpeg"
+                  alt="About Mohamed Aden"
+                  fill
+                  className="object-cover"
+                />
                 {/* Corner accents */}
-                <span className="absolute top-0 left-0 w-7 h-7 border-t-2 border-l-2 border-[#00FF87] rounded-tl-lg" />
-                <span className="absolute top-0 right-0 w-7 h-7 border-t-2 border-r-2 border-[#00FF87] rounded-tr-lg" />
-                <span className="absolute bottom-0 left-0 w-7 h-7 border-b-2 border-l-2 border-[#00FF87] rounded-bl-lg" />
-                <span className="absolute bottom-0 right-0 w-7 h-7 border-b-2 border-r-2 border-[#00FF87] rounded-br-lg" />
-                {/* Ambient gradient */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,255,135,0.03)] to-[rgba(0,153,255,0.03)]" />
-                {/* Icon */}
-                <User size={56} className="text-[#2A4040] relative z-10" />
-                <p className="section-label text-[0.62rem] text-[#3D5555] relative z-10">
-                  your photo here
-                </p>
+                <span className="absolute top-0 left-0 w-7 h-7 border-t-2 border-l-2 border-[#00FF87] rounded-tl-lg z-10" />
+                <span className="absolute top-0 right-0 w-7 h-7 border-t-2 border-r-2 border-[#00FF87] rounded-tr-lg z-10" />
+                <span className="absolute bottom-0 left-0 w-7 h-7 border-b-2 border-l-2 border-[#00FF87] rounded-bl-lg z-10" />
+                <span className="absolute bottom-0 right-0 w-7 h-7 border-b-2 border-r-2 border-[#00FF87] rounded-br-lg z-10" />
               </div>
             </div>
           </motion.div>
@@ -96,19 +96,17 @@ export default function About() {
             >
               <p>
                 I&apos;m a computer science graduate with a deep drive for building
-                software that is technically sound and genuinely useful. My background
-                spans the full stack — from architecting resilient backend systems to
-                crafting responsive, accessible frontends.
+                software that is technically sound and genuinely useful. My background consists of all my schooling at NDSU and on the job experience as a student researcher and intern during my time at university.
               </p>
               <p>
                 I thrive where complex problems demand elegant solutions. Whether
-                it&apos;s optimising a critical query, wiring up a real-time feature,
-                or refining a micro-interaction — I care about every layer.
+                it&apos;s optimizing a critical query, wiring up a real-time feature,
+                or refining a micro-interaction, I care about every layer.
               </p>
               <p>
                 Outside of code, I&apos;m exploring new technologies, reading about
                 systems design, and occasionally contributing to open source. I believe
-                the best engineers never stop learning.
+                the best engineers never stop learning. Otherwise, you can find me shooting hoops or finding a new travel destination!
               </p>
               <div className="pt-2">
                 <a href="#contact" className="btn-primary">

@@ -10,7 +10,7 @@ const ROLES = [
   "Full Stack Engineer",
   "CS Graduate",
   "Systems Thinker",
-  "Open Source Contributor",
+  "Cloud Infrastructure Enthusiast",
   "Problem Solver",
 ];
 
@@ -185,9 +185,9 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-[#6B8F8F] text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-12"
         >
-          CS graduate with a passion for building elegant, high-performance software.
-          From backend systems to pixel-perfect UIs — I ship things that{" "}
-          <span className="text-[#E0E8E8]">actually work</span>.
+          CS graduate looking for full-time roles around the country.
+          Passionate about building solutions that make a real impact, ready to tackle hard problems and ship software that matters.{" "}
+          <span className="text-[#E0E8E8]">Would love to talk!</span>
         </motion.p>
 
         {/* CTAs */}
