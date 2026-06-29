@@ -2,14 +2,13 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { GraduationCap, Code2, MapPin, Zap } from "lucide-react";
 import Image from "next/image";
 
 const HIGHLIGHTS = [
-  { icon: GraduationCap, label: "Education", value: "B.S. Computer Science", accent: "#00CC6A" },
-  { icon: Code2,          label: "Focus",     value: "Full Stack Development", accent: "#00CC6A" },
-  { icon: MapPin,         label: "Location",  value: "Minneapolis, MN",        accent: "#00CC6A" },
-  { icon: Zap,            label: "Currently", value: "Open to Opportunities",  accent: "#00CC6A" },
+  { label: "Education", value: "B.S. Computer Science" },
+  { label: "Focus",     value: "Full Stack Development" },
+  { label: "Location",  value: "Minneapolis, MN" },
+  { label: "Currently", value: "Open to Opportunities" },
 ];
 
 export default function About() {
@@ -78,19 +77,16 @@ export default function About() {
             </motion.div>
 
             <div className="grid grid-cols-2 gap-3">
-              {HIGHLIGHTS.map(({ icon: Icon, label, value }, i) => (
+              {HIGHLIGHTS.map(({ label, value }, i) => (
                 <motion.div
                   key={label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.2 + i * 0.07 }}
-                  className="clip-oct card-surface p-5 cursor-default"
+                  className="clip-oct bg-[#00CC6A] hover:bg-[#00FF87] transition-colors duration-200 p-5 cursor-default"
                 >
-                  <div className="w-9 h-9 bg-[#142814] border border-[#1E3A1E] clip-oct-sm flex items-center justify-center mb-3">
-                    <Icon size={16} className="text-[#00CC6A]" />
-                  </div>
-                  <p className="section-label text-[0.62rem] mb-1">{label}</p>
-                  <p className="text-[#E8F0E8] font-semibold text-sm">{value}</p>
+                  <p className="font-heading text-[0.62rem] tracking-[0.18em] uppercase mb-1 text-[#070A0A] font-semibold">{label}</p>
+                  <p className="text-[#070A0A] font-bold text-sm">{value}</p>
                 </motion.div>
               ))}
             </div>
