@@ -103,23 +103,17 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.35, delay: 0.25 + i * 0.07 }}
-                className="flex items-center gap-4 clip-oct card-surface p-4 group"
+                className="flex items-center gap-4 clip-oct bg-[#00CC6A] hover:bg-[#00FF87] active:bg-[#009950] p-4 transition-colors duration-200"
               >
-                <div className="w-10 h-10 bg-[#142814] border border-[#1E3A1E] clip-oct-sm flex items-center justify-center flex-shrink-0">
-                  <Icon size={16} className="text-[#00CC6A]" />
+                <div className="w-10 h-10 bg-[#009950] clip-oct-sm flex items-center justify-center flex-shrink-0">
+                  <Icon size={16} className="text-[#070A0A]" />
                 </div>
                 <div className="overflow-hidden">
-                  <p className="section-label text-[0.62rem] mb-0.5">{label}</p>
-                  <p className="text-sm text-[#E8F0E8] font-medium group-hover:text-[#00CC6A] transition-colors truncate">{value}</p>
+                  <p className="font-heading section-label text-[0.62rem] mb-0.5 text-[#003D1F]">{label}</p>
+                  <p className="text-sm text-[#070A0A] font-bold truncate">{value}</p>
                 </div>
               </motion.a>
             ))}
-
-            <div className="clip-oct bg-[#0D1F0D] border border-[#1E3A1E] px-4 py-3 mt-1">
-              <p className="text-xs text-[#7A9A7A] font-mono">
-                Usually responds within <span className="text-[#E8F0E8]">24 hours</span>
-              </p>
-            </div>
           </motion.aside>
         </div>
       </div>

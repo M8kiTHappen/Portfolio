@@ -73,10 +73,7 @@ export default function Hero() {
           style={{ width: 120, height: 120 }}
         >
           <div
-            className="w-full h-full overflow-hidden border-2 border-[#1E3A1E]"
-            style={{
-              clipPath: "polygon(16px 0%, calc(100% - 16px) 0%, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0% calc(100% - 16px), 0% 16px)"
-            }}
+            className="w-full h-full overflow-hidden border-2 border-[#1E3A1E] rounded-full"
           >
             <Image src="/avatar.jpg" alt="Mohamed Aden" fill className="object-cover" priority />
           </div>
