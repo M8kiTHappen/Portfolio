@@ -73,9 +73,9 @@ export default function Hero() {
           style={{ width: 120, height: 120 }}
         >
           <div
-            className="w-full h-full overflow-hidden border-2 border-[#1E3A1E] rounded-full"
+            className="relative w-full h-full overflow-hidden border-2 border-[#1E3A1E] rounded-full"
           >
-            <Image src="/avatar.jpg" alt="Mohamed Aden" fill className="object-cover" priority />
+            <Image src="/avatar.jpg" alt="Mohamed Aden" fill className="object-cover object-top" priority />
           </div>
         </motion.div>
 

@@ -109,7 +109,7 @@ export default function Contact() {
                   <Icon size={16} className="text-[#070A0A]" />
                 </div>
                 <div className="overflow-hidden">
-                  <p className="font-heading section-label text-[0.62rem] mb-0.5 text-[#003D1F]">{label}</p>
+                  <p className="font-heading text-[0.62rem] tracking-[0.18em] uppercase mb-0.5 text-[#070A0A] font-semibold">{label}</p>
                   <p className="text-sm text-[#070A0A] font-bold truncate">{value}</p>
                 </div>
               </motion.a>
