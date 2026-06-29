@@ -12,7 +12,6 @@ interface Project {
   github:      string;
   live:        string | null;
   featured:    boolean;
-  accent:      "#00FF87" | "#0099FF";
 }
 
 const PROJECTS: Project[] = [
@@ -24,7 +23,6 @@ const PROJECTS: Project[] = [
     github:   "https://github.com/M8kiTHappen/GeoConnections",
     live:     "https://geo-connections.vercel.app/",
     featured: true,
-    accent:   "#00FF87",
   },
   {
     title: "GuessTheSong",
@@ -34,69 +32,47 @@ const PROJECTS: Project[] = [
     github:   "https://github.com/M8kiTHappen/guess-the-song",
     live:     "https://guess-the-song-topaz-nine.vercel.app/",
     featured: false,
-    accent:   "#0099FF",
   },
 ];
 
 function ProjectCard({ project, index, inView }: { project: Project; index: number; inView: boolean }) {
-  const { title, description, tech, github, live, featured, accent } = project;
+  const { title, description, tech, github, live, featured } = project;
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 36 }}
+      initial={{ opacity: 0, y: 32 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.55, delay: 0.15 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className="card-surface rounded-lg p-6 flex flex-col group relative overflow-hidden"
+      transition={{ duration: 0.5, delay: 0.12 + index * 0.1 }}
+      className="clip-oct card-surface p-6 flex flex-col"
     >
-      {/* Corner accent line */}
-      <span
-        className="absolute top-0 left-0 w-16 h-px transition-all duration-500 group-hover:w-full"
-        style={{ background: accent }}
-        aria-hidden
-      />
-
-      {/* Featured badge */}
       {featured && (
         <div className="flex items-center gap-1.5 mb-4">
-          <Star size={12} style={{ color: accent }} />
-          <span className="section-label text-[0.62rem]">Featured Project</span>
+          <Star size={12} className="text-[#00CC6A]" />
+          <span className="section-label text-[0.62rem]">Featured</span>
         </div>
       )}
 
-      {/* Title */}
-      <h3
-        className="text-lg font-bold text-[#E0E8E8] mb-3 group-hover:text-[#00FF87] transition-colors duration-200"
-      >
-        {title}
-      </h3>
+      <h3 className="font-heading text-lg font-bold text-[#E8F0E8] mb-3">{title}</h3>
 
-      {/* Description */}
-      <p className="text-[#6B8F8F] text-sm leading-relaxed mb-6 flex-1">{description}</p>
+      <p className="font-body text-[#7A9A7A] text-sm leading-relaxed mb-6 flex-1">{description}</p>
 
-      {/* Tech badges */}
-      <div className="flex flex-wrap gap-1.5 mb-6">
+      <div className="flex flex-wrap gap-2 mb-6">
         {tech.map((t) => (
           <span
             key={t}
-            className="text-xs font-mono px-2 py-0.5 rounded-sm"
-            style={{
-              color:            accent === "#00FF87" ? "#0099FF" : "#00FF87",
-              background:       accent === "#00FF87" ? "rgba(0,153,255,0.07)" : "rgba(0,255,135,0.07)",
-              border:           `1px solid ${accent === "#00FF87" ? "rgba(0,153,255,0.15)" : "rgba(0,255,135,0.15)"}`,
-            }}
+            className="text-xs font-mono px-2 py-0.5 bg-[#142814] border border-[#1E3A1E] text-[#7A9A7A] clip-oct-sm"
           >
             {t}
           </span>
         ))}
       </div>
 
-      {/* Links */}
       <div className="flex items-center gap-5">
         <a
           href={github}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-1.5 text-sm text-[#6B8F8F] hover:text-[#00FF87] transition-colors"
+          className="flex items-center gap-1.5 text-sm text-[#7A9A7A] hover:text-[#00CC6A] transition-colors"
         >
           <GithubIcon size={15} />
           Code
@@ -106,7 +82,7 @@ function ProjectCard({ project, index, inView }: { project: Project; index: numb
             href={live}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-sm text-[#6B8F8F] hover:text-[#0099FF] transition-colors"
+            className="flex items-center gap-1.5 text-sm text-[#7A9A7A] hover:text-[#00CC6A] transition-colors"
           >
             <ExternalLink size={15} />
             Live Demo
@@ -122,14 +98,14 @@ export default function Projects() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="projects" className="py-28 px-6" ref={ref}>
+    <section id="projects" className="py-28 px-6 bg-[#070A0A]" ref={ref}>
       <div className="max-w-6xl mx-auto">
-        {/* Heading */}
+
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.08 }}
-          className="text-4xl sm:text-5xl font-bold text-[#E0E8E8] mb-4"
+          transition={{ duration: 0.45 }}
+          className="font-heading text-4xl sm:text-5xl font-bold text-[#E8F0E8] mb-4"
         >
           Selected Work
         </motion.h2>
@@ -137,25 +113,23 @@ export default function Projects() {
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.45, delay: 0.14 }}
-          className="text-[#6B8F8F] text-base sm:text-lg mb-14"
+          transition={{ duration: 0.4, delay: 0.08 }}
+          className="font-body text-[#7A9A7A] text-base sm:text-lg mb-14"
         >
           A selection of projects I&apos;ve built. Each one taught me something new.
         </motion.p>
 
-        {/* Cards grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 gap-4">
           {PROJECTS.map((project, i) => (
             <ProjectCard key={project.title} project={project} index={i} inView={inView} />
           ))}
         </div>
 
-        {/* GitHub CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.45, delay: 0.45 }}
-          className="mt-12 text-center"
+          transition={{ duration: 0.4, delay: 0.35 }}
+          className="mt-10 text-center"
         >
           <a
             href="https://github.com/M8kiTHappen"
@@ -163,7 +137,7 @@ export default function Projects() {
             rel="noopener noreferrer"
             className="btn-outline inline-flex items-center gap-2"
           >
-            <GithubIcon size={16} />
+            <GithubIcon size={15} />
             View More on GitHub
           </a>
         </motion.div>

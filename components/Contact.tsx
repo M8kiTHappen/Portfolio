@@ -6,24 +6,9 @@ import { Send, Mail, CheckCircle } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 
 const CONTACT_LINKS = [
-  {
-    icon:  Mail,
-    label: "Email",
-    value: "Mohamed.a03@outlook.com",
-    href:  "mailto:Mohamed.a03@outlook.com",
-  },
-  {
-    icon:  GithubIcon,
-    label: "GitHub",
-    value: "github.com/M8kiTHappen",
-    href:  "https://github.com/M8kiTHappen",
-  },
-  {
-    icon:  LinkedinIcon,
-    label: "LinkedIn",
-    value: "linkedin.com/in/m-aden",
-    href:  "https://www.linkedin.com/in/m-aden/",
-  },
+  { icon: Mail,         label: "Email",    value: "Mohamed.a03@outlook.com",  href: "mailto:Mohamed.a03@outlook.com" },
+  { icon: GithubIcon,   label: "GitHub",   value: "github.com/M8kiTHappen",   href: "https://github.com/M8kiTHappen" },
+  { icon: LinkedinIcon, label: "LinkedIn", value: "linkedin.com/in/m-aden",   href: "https://www.linkedin.com/in/m-aden/" },
 ];
 
 export default function Contact() {
@@ -36,25 +21,23 @@ export default function Contact() {
   const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     const subject = encodeURIComponent(`Portfolio contact from ${form.name}`);
-    const body    = encodeURIComponent(
-      `${form.message}\n\n—\nFrom: ${form.name}\nEmail: ${form.email}`
-    );
+    const body    = encodeURIComponent(`${form.message}\n\nFrom: ${form.name}\nEmail: ${form.email}`);
     window.location.href = `mailto:Mohamed.a03@outlook.com?subject=${subject}&body=${body}`;
     setSent(true);
   };
 
   const inputClass =
-    "w-full bg-[#0E1616] border border-[rgba(0,255,135,0.12)] rounded-lg px-4 py-3 text-sm text-[#E0E8E8] placeholder:text-[#3D5555] focus:outline-none focus:border-[rgba(0,255,135,0.38)] transition-colors duration-200";
+    "w-full bg-[#0D1F0D] border border-[#1E3A1E] px-4 py-3 text-sm text-[#E8F0E8] placeholder:text-[#2A502A] focus:outline-none focus:border-[#00CC6A] transition-colors duration-200 clip-oct";
 
   return (
-    <section id="contact" className="py-28 px-6" ref={ref}>
+    <section id="contact" className="py-28 px-6 bg-[#070A0A]" ref={ref}>
       <div className="max-w-5xl mx-auto">
-        {/* Heading */}
+
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.08 }}
-          className="text-4xl sm:text-5xl font-bold text-[#E0E8E8] mb-4"
+          transition={{ duration: 0.45 }}
+          className="font-heading text-4xl sm:text-5xl font-bold text-[#E8F0E8] mb-4"
         >
           Get In Touch
         </motion.h2>
@@ -62,95 +45,54 @@ export default function Contact() {
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.45, delay: 0.14 }}
-          className="text-[#6B8F8F] text-base sm:text-lg mb-14 max-w-lg"
+          transition={{ duration: 0.4, delay: 0.08 }}
+          className="font-body text-[#7A9A7A] text-base sm:text-lg mb-14 max-w-lg"
         >
-          I&apos;m open to new opportunities, collaborations, and interesting
-          conversations. My inbox is always open.
+          I&apos;m open to new opportunities, collaborations, and interesting conversations. My inbox is always open.
         </motion.p>
 
         <div className="grid md:grid-cols-5 gap-12 items-start">
-          {/* ── Form ── */}
           <motion.form
-            initial={{ opacity: 0, x: -28 }}
+            initial={{ opacity: 0, x: -24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
             onSubmit={handleSubmit}
-            className="md:col-span-3 space-y-5"
+            className="md:col-span-3 space-y-4"
           >
             <div>
-              <label htmlFor="contact-name" className="section-label block mb-2">
-                Name
-              </label>
+              <label htmlFor="contact-name" className="font-heading section-label block mb-2">Name</label>
               <input
-                id="contact-name"
-                type="text"
-                required
-                autoComplete="name"
-                placeholder="John Doe"
-                value={form.name}
-                onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                id="contact-name" type="text" required autoComplete="name" placeholder="John Doe"
+                value={form.name} onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                 className={inputClass}
               />
             </div>
-
             <div>
-              <label htmlFor="contact-email" className="section-label block mb-2">
-                Email
-              </label>
+              <label htmlFor="contact-email" className="font-heading section-label block mb-2">Email</label>
               <input
-                id="contact-email"
-                type="email"
-                required
-                autoComplete="email"
-                placeholder="john@example.com"
-                value={form.email}
-                onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                id="contact-email" type="email" required autoComplete="email" placeholder="john@example.com"
+                value={form.email} onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                 className={inputClass}
               />
             </div>
-
             <div>
-              <label htmlFor="contact-message" className="section-label block mb-2">
-                Message
-              </label>
+              <label htmlFor="contact-message" className="font-heading section-label block mb-2">Message</label>
               <textarea
-                id="contact-message"
-                required
-                rows={5}
-                placeholder="Tell me about your project or opportunity…"
-                value={form.message}
-                onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                id="contact-message" required rows={5} placeholder="Tell me about your opportunity..."
+                value={form.message} onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                 className={`${inputClass} resize-none`}
               />
             </div>
-
-            <button
-              type="submit"
-              className="btn-primary w-full gap-2"
-              disabled={sent}
-            >
-              {sent ? (
-                <>
-                  <CheckCircle size={16} />
-                  Message Sent — Check Your Email Client
-                </>
-              ) : (
-                <>
-                  <Send size={15} />
-                  Send Message
-                </>
-              )}
+            <button type="submit" className="btn-primary w-full gap-2" disabled={sent}>
+              {sent ? <><CheckCircle size={16} /> Message Sent</> : <><Send size={15} /> Send Message</>}
             </button>
           </motion.form>
 
-          {/* ── Contact cards ── */}
           <motion.aside
-            initial={{ opacity: 0, x: 28 }}
+            initial={{ opacity: 0, x: 24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="md:col-span-2 flex flex-col gap-4"
-            aria-label="Contact links"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="md:col-span-2 flex flex-col gap-3"
           >
             {CONTACT_LINKS.map(({ icon: Icon, label, value, href }, i) => (
               <motion.a
@@ -158,31 +100,24 @@ export default function Contact() {
                 href={href}
                 target={href.startsWith("mailto") ? undefined : "_blank"}
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 14 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: 0.32 + i * 0.08 }}
-                className="flex items-center gap-4 card-surface rounded-lg p-4 group"
+                transition={{ duration: 0.35, delay: 0.25 + i * 0.07 }}
+                className="flex items-center gap-4 clip-oct card-surface p-4 group"
               >
-                <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ background: "rgba(0,255,135,0.07)", border: "1px solid rgba(0,255,135,0.14)" }}
-                >
-                  <Icon size={17} className="text-[#00FF87]" />
+                <div className="w-10 h-10 bg-[#142814] border border-[#1E3A1E] clip-oct-sm flex items-center justify-center flex-shrink-0">
+                  <Icon size={16} className="text-[#00CC6A]" />
                 </div>
                 <div className="overflow-hidden">
                   <p className="section-label text-[0.62rem] mb-0.5">{label}</p>
-                  <p className="text-sm text-[#E0E8E8] font-medium group-hover:text-[#00FF87] transition-colors truncate">
-                    {value}
-                  </p>
+                  <p className="text-sm text-[#E8F0E8] font-medium group-hover:text-[#00CC6A] transition-colors truncate">{value}</p>
                 </div>
               </motion.a>
             ))}
 
-            {/* Response-time chip */}
-            <div className="mt-2 flex items-center gap-2 px-4 py-3 rounded-lg border border-[rgba(0,153,255,0.12)] bg-[rgba(0,153,255,0.04)]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0099FF] animate-pulse flex-shrink-0" />
-              <p className="text-xs text-[#6B8F8F] font-mono">
-                Usually responds within <span className="text-[#E0E8E8]">24 hours</span>
+            <div className="clip-oct bg-[#0D1F0D] border border-[#1E3A1E] px-4 py-3 mt-1">
+              <p className="text-xs text-[#7A9A7A] font-mono">
+                Usually responds within <span className="text-[#E8F0E8]">24 hours</span>
               </p>
             </div>
           </motion.aside>
