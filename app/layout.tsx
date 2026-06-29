@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, JetBrains_Mono, Lora, Patua_One } from "next/font/google";
+import { Sono, Lora, Patua_One } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+const sono = Sono({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
+  variable: "--font-sono",
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -45,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${lora.variable} ${patuaOne.variable} scroll-smooth`}
+      className={`${sono.variable} ${lora.variable} ${patuaOne.variable} scroll-smooth`}
     >
       <body className="antialiased">{children}</body>
     </html>

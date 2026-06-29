@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ExternalLink, Star } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
 
 interface Project {
@@ -36,31 +36,24 @@ const PROJECTS: Project[] = [
 ];
 
 function ProjectCard({ project, index, inView }: { project: Project; index: number; inView: boolean }) {
-  const { title, description, tech, github, live, featured } = project;
+  const { title, description, tech, github, live } = project;
 
   return (
     <motion.article
       initial={{ opacity: 0, y: 32 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: 0.12 + index * 0.1 }}
-      className="clip-oct card-surface p-6 flex flex-col"
+      className="clip-oct bg-[#00CC6A] hover:bg-[#00FF87] transition-colors duration-200 p-6 flex flex-col"
     >
-      {featured && (
-        <div className="flex items-center gap-1.5 mb-4">
-          <Star size={12} className="text-[#00CC6A]" />
-          <span className="section-label text-[0.62rem]">Featured</span>
-        </div>
-      )}
+      <h3 className="font-heading text-lg font-bold text-[#070A0A] mb-3">{title}</h3>
 
-      <h3 className="font-heading text-lg font-bold text-[#E8F0E8] mb-3">{title}</h3>
-
-      <p className="font-body text-[#7A9A7A] text-sm leading-relaxed mb-6 flex-1">{description}</p>
+      <p className="font-body text-[#003D1F] text-sm leading-relaxed mb-6 flex-1">{description}</p>
 
       <div className="flex flex-wrap gap-2 mb-6">
         {tech.map((t) => (
           <span
             key={t}
-            className="text-xs font-mono px-2 py-0.5 bg-[#142814] border border-[#1E3A1E] text-[#7A9A7A] clip-oct-sm"
+            className="text-xs font-mono px-2 py-0.5 bg-[#009950] text-[#070A0A] font-semibold clip-oct-sm"
           >
             {t}
           </span>
@@ -72,7 +65,7 @@ function ProjectCard({ project, index, inView }: { project: Project; index: numb
           href={github}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-1.5 text-sm text-[#7A9A7A] hover:text-[#00CC6A] transition-colors"
+          className="flex items-center gap-1.5 text-sm text-[#070A0A] hover:text-[#003D1F] transition-colors font-semibold"
         >
           <GithubIcon size={15} />
           Code
@@ -82,7 +75,7 @@ function ProjectCard({ project, index, inView }: { project: Project; index: numb
             href={live}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-sm text-[#7A9A7A] hover:text-[#00CC6A] transition-colors"
+            className="flex items-center gap-1.5 text-sm text-[#070A0A] hover:text-[#003D1F] transition-colors font-semibold"
           >
             <ExternalLink size={15} />
             Live Demo

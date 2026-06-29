@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { GraduationCap, Briefcase } from "lucide-react";
 
 interface TimelineItem {
   type:        "education" | "work";
@@ -52,7 +51,6 @@ const TIMELINE: TimelineItem[] = [
   },
 ];
 
-const ICON = { education: GraduationCap, work: Briefcase };
 
 export default function Experience() {
   const ref    = useRef<HTMLElement>(null);
@@ -79,47 +77,39 @@ export default function Experience() {
 
           <ol className="space-y-8" aria-label="Career timeline">
             {TIMELINE.map((item, i) => {
-              const Icon = ICON[item.type];
               return (
                 <motion.li
                   key={`${item.org}-${i}`}
                   initial={{ opacity: 0, x: -24 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.15 + i * 0.12 }}
-                  className="relative pl-16"
+                  className="relative"
                 >
-                  <div
-                    className="absolute left-0 top-0 w-12 h-12 bg-[#142814] border border-[#1E3A1E] flex items-center justify-center clip-oct-sm"
-                    aria-hidden
-                  >
-                    <Icon size={18} className="text-[#00CC6A]" />
-                  </div>
-
-                  <div className="clip-oct card-surface p-6">
+                  <div className="clip-oct bg-[#00CC6A] p-6">
                     <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                       <div>
-                        <p className="section-label text-[0.62rem] mb-1">
+                        <p className="font-heading text-[0.62rem] tracking-[0.18em] uppercase mb-1 text-[#003D1F] font-semibold">
                           {item.type === "education" ? "Education" : "Work"}
                         </p>
-                        <h3 className="font-heading text-base sm:text-lg font-bold text-[#E8F0E8] leading-snug">
+                        <h3 className="font-heading text-base sm:text-lg font-bold text-[#070A0A] leading-snug">
                           {item.title}
                         </h3>
-                        <p className="text-[#00CC6A] font-semibold text-sm mt-0.5">{item.org}</p>
+                        <p className="text-[#003D1F] font-semibold text-sm mt-0.5">{item.org}</p>
                       </div>
 
-                      <span className="font-mono text-xs px-3 py-1.5 bg-[#142814] border border-[#1E3A1E] text-[#7A9A7A] clip-oct-sm whitespace-nowrap">
+                      <span className="font-mono text-xs px-3 py-1.5 bg-[#009950] text-[#070A0A] font-semibold clip-oct-sm whitespace-nowrap">
                         {item.period}
                       </span>
                     </div>
 
-                    <p className="font-body text-[#7A9A7A] text-sm leading-relaxed mb-4">{item.description}</p>
+                    <p className="font-body text-[#003D1F] text-sm leading-relaxed mb-4">{item.description}</p>
 
                     {item.tags && (
                       <div className="flex flex-wrap gap-2">
                         {item.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="text-xs font-mono px-2 py-0.5 bg-[#142814] border border-[#1E3A1E] text-[#7A9A7A] clip-oct-sm"
+                            className="text-xs font-mono px-2 py-0.5 bg-[#009950] text-[#070A0A] font-semibold clip-oct-sm"
                           >
                             {tag}
                           </span>
